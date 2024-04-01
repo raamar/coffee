@@ -1,0 +1,15 @@
+[data-product_type='Кофе'] {
+	--theme-bg: #efccb9;
+}
+
+[data-product_type='Чай'] {
+	--theme-bg: #c9ea94;
+}
+
+[data-product_type='Молочный коктейль'] {
+	--theme-bg: #f9ecd2;
+}
+
+[data-product_type='Морсы и газ. напитки'] {
+	--theme-bg: #ffe665;
+}
