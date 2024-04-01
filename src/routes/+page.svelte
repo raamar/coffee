@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 	import bg from '$lib/images/tmp/Промо_3.png';
 	const transition = 250;

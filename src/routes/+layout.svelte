@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import product_type from '$lib/stores/product_type';
 	import './themes.css';
 	import './styles.css';
