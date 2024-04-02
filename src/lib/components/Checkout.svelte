@@ -1,6 +1,9 @@
 <script lang="ts">
 	import product_item from '$lib/stores/product_item';
 	import { fade, fly } from 'svelte/transition';
+	import Switch from './Switch.svelte';
+
+	let switchValue: string;
 
 	const handleCloseClick = () => {
 		product_item.set(undefined);
@@ -35,6 +38,7 @@
 			</div>
 			<p class="title">{$product_item.title}</p>
 			<div class="buttons-container">
+				<Switch />
 				<button class="button"
 					><span>Оплатить</span><span class="price">{$product_item.price}₽</span></button
 				>
@@ -64,12 +68,9 @@
 		overflow: hidden;
 		padding: 0 20px;
 		cursor: default;
+		display: grid;
+		gap: 40px;
 	}
-
-	.checkout__wrapper > *:not(:first-child) {
-		margin-top: 40px;
-	}
-
 	.close {
 		background: #fafafa;
 		width: 333px;
@@ -113,5 +114,10 @@
 
 	.buttons-container {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		margin-top: auto !important;
+		margin-bottom: 60px;
 	}
 </style>
