@@ -32,6 +32,7 @@ body {
 	width: 1080px;
 	aspect-ratio: 9 / 16;
 	overflow: hidden;
+	position: relative;
 }
 
 .app {
@@ -101,4 +102,39 @@ button:focus:not(:focus-visible) {
 
 .rounded {
 	border-radius: 45px;
+}
+
+.extra-text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 94px;
+	aspect-ratio: 1;
+	background-color: var(--active-color);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 64px;
+	margin: 0;
+}
+
+.button {
+	border-radius: 35px;
+	padding: 15px 30px;
+	width: 100%;
+	border: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 48px;
+	line-height: 53px;
+	background-color: var(--active-color);
+	cursor: pointer;
+}
+
+.price {
+	font-size: 100px;
+	font-weight: 600;
+	line-height: 127.8px;
 }

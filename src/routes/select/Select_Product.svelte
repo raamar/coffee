@@ -50,6 +50,7 @@
 	ul {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 491px;
 		gap: 20px;
 		padding-left: 0;
 		margin-top: 60px;

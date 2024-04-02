@@ -1,8 +1,16 @@
 <script lang="ts">
+	import product_item from '$lib/stores/product_item';
+
 	export let item: Item;
+
+	const handleClick = () => {
+		product_item.set(item);
+	};
 </script>
 
-<article class="rounded">
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<article class="rounded" on:click={handleClick}>
 	<main>
 		{#if item.extra_text}
 			<p class="extra-text">
@@ -25,6 +33,9 @@
 		text-align: center;
 		cursor: pointer;
 		transition: border-color 0.25s ease;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	article:active {
@@ -48,21 +59,6 @@
 	img {
 		width: 100%;
 		display: block;
-	}
-
-	.extra-text {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 94px;
-		aspect-ratio: 1;
-		background-color: var(--active-color);
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 64px;
-		margin: 0;
 	}
 
 	footer {
