@@ -26,7 +26,7 @@ const default_sizes: Item_Size[] = [
 	}
 ];
 
-const default_items = [
+const default_items: Item[] = [
 	{
 		title: 'Эспрессо',
 		image: product_image_1,
