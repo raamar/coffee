@@ -23,6 +23,18 @@
 		overflow: hidden;
 		padding: 25px;
 		text-align: center;
+		cursor: pointer;
+		transition: border-color 0.25s ease;
+	}
+
+	article:active {
+		border-color: var(--active-color);
+	}
+
+	@media (hover: hover) {
+		article:hover {
+			border-color: var(--active-color);
+		}
 	}
 
 	p {
@@ -51,5 +63,14 @@
 		align-items: center;
 		font-size: 64px;
 		margin: 0;
+	}
+
+	footer {
+		font-weight: 600;
+	}
+
+	footer p strong span {
+		font-size: 64px;
+		line-height: 71px;
 	}
 </style>

@@ -17,7 +17,7 @@
 <style>
 	section {
 		background-color: #fff;
-		padding: 80px 20px;
+		padding: 120px 20px;
 		margin-top: -80px;
 		filter: drop-shadow(0px -10px 75px rgba(0, 0, 0, 0.09));
 		z-index: 3;
@@ -28,6 +28,7 @@
 		line-height: 92px;
 		position: relative;
 		z-index: 1;
+		margin: 0;
 	}
 
 	.title::before {
@@ -51,5 +52,6 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 		padding-left: 0;
+		margin-top: 80px;
 	}
 </style>

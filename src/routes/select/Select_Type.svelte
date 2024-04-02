@@ -47,6 +47,10 @@
 		padding-bottom: 80px;
 	}
 
+	li:not(:first-child) {
+		border-left: 1px solid #dcdcdc;
+	}
+
 	li p {
 		min-height: 82px;
 		font-size: 32px;
