@@ -52,6 +52,6 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 		padding-left: 0;
-		margin-top: 80px;
+		margin-top: 60px;
 	}
 </style>
