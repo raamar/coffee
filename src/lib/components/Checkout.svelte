@@ -2,14 +2,15 @@
 	import product_item from '$lib/stores/product_item';
 	import { fade, fly } from 'svelte/transition';
 	import Switch from './Switch.svelte';
+	import { goto } from '$app/navigation';
 
-	let switchValue: string;
+	let checked: boolean = false;
 
 	const handleCloseClick = () => {
 		product_item.set(undefined);
 	};
 
-	const handleClick = (event: Event) => {
+	const handleOutClick = (event: Event) => {
 		if (!event.target) {
 			return;
 		}
@@ -20,12 +21,20 @@
 			handleCloseClick();
 		}
 	};
+
+	const hadlePayClick = () => {
+		if (checked) {
+			goto('/cash');
+		}
+
+		goto('/card');
+	};
 </script>
 
 {#if $product_item}
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div class="checkout" on:click={handleClick} transition:fade={{ duration: 150 }}>
+	<div class="checkout" on:click={handleOutClick} transition:fade={{ duration: 150 }}>
 		<div class="checkout__wrapper rounded-top" transition:fly={{ y: '100%', duration: 250 }}>
 			<button class="close" type="button" on:click={handleCloseClick}></button>
 			<div class="preview">
@@ -38,8 +47,8 @@
 			</div>
 			<p class="title">{$product_item.title}</p>
 			<div class="buttons-container">
-				<Switch />
-				<button class="button"
+				<Switch bind:checked />
+				<button class="button button_price" on:click={hadlePayClick}
 					><span>Оплатить</span><span class="price">{$product_item.price}₽</span></button
 				>
 			</div>

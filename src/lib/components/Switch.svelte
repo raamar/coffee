@@ -1,8 +1,9 @@
 <script lang="ts">
+	export let checked: boolean = false;
 </script>
 
 <label>
-	<input type="checkbox" class="visually-hidden" />
+	<input type="checkbox" class="visually-hidden" bind:checked />
 	<span>Картой</span>
 	<span>Наличными</span>
 </label>
