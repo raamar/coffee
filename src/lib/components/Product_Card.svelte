@@ -2,9 +2,13 @@
 	import product_item from '$lib/stores/product_item';
 
 	export let item: Item;
+	export let index: number;
 
 	const handleClick = () => {
-		product_item.set(item);
+		product_item.set({
+			...item,
+			index
+		});
 	};
 </script>
 

@@ -30,7 +30,7 @@
 			<ul>
 				{#each config[$product_type] as item, index (`${$product_type}_${index}`)}
 					<div in:scale|global={{ delay: index * 100 }}>
-						<ProductCard {item} />
+						<ProductCard {item} {index} />
 					</div>
 				{/each}
 			</ul>
