@@ -1,3 +1,15 @@
+# Кнопки для взаимодействия с эмулятором
+
+```bash
+1 - Добавить 10 рублей
+2 - Добавить 1 рубль
+3 - Ошибка при оплате картой
+4 - Успешная оплата картой
+5 - Сообщения от терминала при оплате картой
+6 - Напиток приготовлен
+7 - Ошибка при приготовлении
+```
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
