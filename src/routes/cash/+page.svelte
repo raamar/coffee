@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import paid_product from '$lib/stores/paid_product';
 	import product_item from '$lib/stores/product_item';
 	import { onMount } from 'svelte';
 
@@ -25,7 +26,8 @@
 			sum += amount;
 			if ($product_item && sum >= $product_item.price) {
 				emulator.StopCashin(() => {
-					goto('/success');
+					paid_product.set($product_item?.index);
+					goto('/wait');
 				});
 			}
 		});
@@ -48,7 +50,7 @@
 			/>
 		</svg>
 	</div>
-	<p><span>Внесите деньги</span><br /><span>Сумма: {sum}₽</span></p>
+	<p><span>Внесите {$product_item?.price}₽</span><br /><span>{sum}₽</span></p>
 	<button class="button button_alt" on:click={handleCancelClick}>Отмена</button>
 </section>
 

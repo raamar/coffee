@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import card from '$lib/images/icons/card-icon.svg';
 	import { browser } from '$app/environment';
+	import paid_product from '$lib/stores/paid_product';
 
 	let status: string = '...';
 
@@ -25,7 +26,8 @@
 			$product_item.price,
 			(ok) => {
 				if (ok) {
-					goto('/success');
+					paid_product.set($product_item?.index);
+					goto('/wait');
 					return;
 				}
 
