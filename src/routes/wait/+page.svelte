@@ -11,13 +11,25 @@
 	}
 
 	onMount(() => {
+		if ($paid_product === undefined) {
+			return;
+		}
+
+		emulator.Vend($paid_product, (ok) => {
+			if (ok) {
+				goto('/success');
+				return;
+			}
+
+			goto('/wait/error');
+		});
 		paid_product.set(undefined);
 	});
 </script>
 
 <section>
 	<div class="circle">
-		<Timer size={800} duration={30} />
+		<Timer size={800} duration={60} />
 	</div>
 </section>
 

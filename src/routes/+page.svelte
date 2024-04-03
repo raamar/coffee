@@ -9,6 +9,7 @@
 	import zerno_5 from '$lib/images/promo/1/5.png';
 	import { onMount } from 'svelte';
 	import PulsatingCircle from '$lib/components/Pulsating_Circle.svelte';
+	import product_item from '$lib/stores/product_item';
 	const transition = 800;
 
 	let blured = false;
@@ -23,6 +24,7 @@
 
 	onMount(() => {
 		preloadData('/select');
+		product_item.set(undefined);
 	});
 </script>
 
