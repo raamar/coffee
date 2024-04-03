@@ -29,7 +29,7 @@
 
 			<ul>
 				{#each config[$product_type] as item, index (`${$product_type}_${index}`)}
-					<div transition:scale|global={{ delay: index * 100 }}>
+					<div in:scale|global={{ delay: index * 100 }}>
 						<ProductCard {item} />
 					</div>
 				{/each}

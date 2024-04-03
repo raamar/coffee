@@ -4,24 +4,21 @@
 	import { onMount } from 'svelte';
 	import card from '$lib/images/icons/card-icon.svg';
 	import { browser } from '$app/environment';
-	import createEmulator from '$lib/createEmulator';
 
-	let status: string;
+	let status: string = '...';
 
 	const handleCancelClick = () => {
 		emulator.BankCardCancel();
 		goto('/select');
 	};
 
+	if (browser && !$product_item) {
+		goto('/select');
+	}
+
 	onMount(() => {
 		if (!$product_item) {
-			goto('/select');
 			return;
-		}
-
-		if (browser && !window?.emulator) {
-			console.error('Эмулятор не найден.');
-			createEmulator();
 		}
 
 		emulator.BankCardPurchase(
@@ -43,7 +40,7 @@
 
 <section>
 	<img src={card} alt="card" />
-	<p>{status || '...'}</p>
+	<p>{status}</p>
 	<button class="button button_alt" on:click={handleCancelClick}>Отмена</button>
 </section>
 

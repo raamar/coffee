@@ -3,6 +3,13 @@
 	import './themes.css';
 	import './styles.css';
 	import { onNavigate } from '$app/navigation';
+	import { browser } from '$app/environment';
+	import createEmulator from '$lib/createEmulator';
+
+	if (browser && !window?.emulator) {
+		console.warn('Эмулятор не найден. Создаю свой.');
+		createEmulator();
+	}
 
 	onNavigate(() => {
 		if (!('startViewTransition' in document)) {

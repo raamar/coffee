@@ -27,7 +27,7 @@
 	</div>
 	<p>Оплата не прошла</p>
 	<button class="button button_alt" on:click={handleBackClick}>Попробовать ещё раз</button>
-	<button class="button button_alt" on:click={handleCancelClick}>Отмена</button>
+	<button class="button button_ghost" on:click={handleCancelClick}>Отмена</button>
 </section>
 
 <style>

@@ -134,6 +134,7 @@ button:focus:not(:focus-visible) {
 	line-height: 53px;
 	background-color: var(--active-color);
 	cursor: pointer;
+	min-height: 163px;
 }
 
 .button_price {
@@ -143,7 +144,12 @@ button:focus:not(:focus-visible) {
 .button_alt {
 	background-color: #fff;
 	justify-content: center;
-	min-height: 163px;
+}
+
+.button_ghost {
+	background-color: transparent;
+	border: 1px #fff solid;
+	color: #fff;
 }
 
 .price {

@@ -2,7 +2,6 @@
 	import product_item from '$lib/stores/product_item';
 	import { fade, fly } from 'svelte/transition';
 	import Switch from './Switch.svelte';
-	import { goto } from '$app/navigation';
 
 	let checked: boolean = false;
 
@@ -20,14 +19,6 @@
 		if (!target.closest('.checkout__wrapper')) {
 			handleCloseClick();
 		}
-	};
-
-	const hadlePayClick = () => {
-		if (checked) {
-			goto('/cash');
-		}
-
-		goto('/card');
 	};
 </script>
 
@@ -48,8 +39,8 @@
 			<p class="title">{$product_item.title}</p>
 			<div class="buttons-container">
 				<Switch bind:checked />
-				<button class="button button_price" on:click={hadlePayClick}
-					><span>Оплатить</span><span class="price">{$product_item.price}₽</span></button
+				<a class="button button_price" href={checked ? '/cash' : '/card'}
+					><span>Оплатить</span><span class="price">{$product_item.price}₽</span></a
 				>
 			</div>
 		</div>
@@ -128,5 +119,9 @@
 		gap: 20px;
 		margin-top: auto !important;
 		margin-bottom: 60px;
+	}
+
+	a {
+		text-decoration: none;
 	}
 </style>
