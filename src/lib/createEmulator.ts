@@ -16,7 +16,7 @@ const createEmulator = () => {
 				abortControllers.BankCardPurchase = new AbortController();
 
 				document.addEventListener(
-					'keydown_z',
+					'keydown_3',
 					() => {
 						cb(false);
 						this.BankCardCancel();
@@ -27,7 +27,7 @@ const createEmulator = () => {
 				);
 
 				document.addEventListener(
-					'keydown_x',
+					'keydown_4',
 					() => {
 						cb(true);
 						this.BankCardCancel();
@@ -38,7 +38,7 @@ const createEmulator = () => {
 				);
 
 				document.addEventListener(
-					'keydown_c',
+					'keydown_5',
 					() => {
 						display_cb(Math.random() * 1000 + '');
 					},
@@ -77,7 +77,7 @@ const createEmulator = () => {
 			Vend(product_idx, cb) {
 				abortControllers.Vend = new AbortController();
 				document.addEventListener(
-					'keydown_v',
+					'keydown_6',
 					() => {
 						cb(true);
 						abortControllers?.Vend?.abort();
@@ -88,7 +88,7 @@ const createEmulator = () => {
 				);
 
 				document.addEventListener(
-					'keydown_b',
+					'keydown_7',
 					() => {
 						cb(false);
 						abortControllers?.Vend?.abort();
